@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.1",
@@ -18,8 +19,6 @@
     "antd": "^5.21.2",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
     "next": "^14.2.15",
     "next-auth": "^4.24.8",
     "next-cloudinary": "^6.15.0",
